@@ -25,6 +25,9 @@ function changeFunction(el, value, num, string) {
   if (Number(value) > num) {
     el.closest('.form-line').classList.add('error')
     el.nextElementSibling.textContent = `Must be ${string}`
+  } else if (isNaN(value)) {
+    el.closest('.form-line').classList.add('error')
+    el.nextElementSibling.textContent = `Must be only numbers`
   } else if (!value) {
     el.closest('.form-line').classList.add('error')
     el.nextElementSibling.textContent = 'This field is required'
