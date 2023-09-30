@@ -90,7 +90,7 @@ formAge.addEventListener('submit', e => {
     return false
   }
 
-  // Months and days
+  // Months and days errors
   if (
     valueMonth === '02' && valueDay > 29 || valueDay === '31' && (valueMonth === '04' || 
     valueMonth === '06' || valueMonth === '09' || valueMonth === '11') ||
@@ -127,23 +127,27 @@ formAge.addEventListener('submit', e => {
 
   
   // Show results
-  if (resultInDays <= 365) {
-    nodeYears.textContent = 0
-   } else {
-    animateNumbers(resultYears, nodeYears)
-  }
+  // if (resultInDays <= 365) {
+  //   nodeYears.textContent = 0
+  //  } else {
+  //   animateNumbers(resultYears, nodeYears)
+  // }
 
-  if (resultInDays <= 30 || typedMonth === currentMonth) {
-    nodeMonths.textContent = 0
-  } else {
-    animateNumbers(resultMonths, nodeMonths)
-  }
+  // if (resultInDays <= 30 || typedMonth === currentMonth) {
+  //   nodeMonths.textContent = 0
+  // } else {
+  //   animateNumbers(resultMonths, nodeMonths)
+  // }
 
-  if (resultInDays <= 1 || typedDay === currentDay) {
-    nodeDays.textContent = 0
-  } else {
-    animateNumbers(resultDays - 1, nodeDays)
-  }
+  // if (resultInDays <= 1 || typedDay === currentDay) {
+  //   nodeDays.textContent = 0
+  // } else {
+  //   animateNumbers(resultDays - 1, nodeDays)
+  // }
+
+  nodeYears.textContent = valueYear
+  nodeMonths.textContent = valueMonth
+  nodeDays.textContent = valueDay
 
 })
 
