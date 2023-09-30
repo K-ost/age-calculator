@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <title>Frontend Mentor | Age calculator app</title>
+</head>
+<body>
+
+  <header></header>
+
+  <main>
+
+    <div class="app">
+
+      <form action="#" id="formAge">
+        
+        <div class="form">
+          <div class="form-top">
+            <div class="form-group">
+              <div class="form-line">
+                <label class="form-label" for="inputDay">Day</label>
+                <input type="number" id="inputDay" class="form-control" placeholder="DD">
+                <div class="form-error">This field is required</div>
+              </div><!-- /form-line -->
+
+              <div class="form-line">
+                <label class="form-label" for="inputMonth">Month</label>
+                <input type="number" id="inputMonth" class="form-control" placeholder="MM" max="31" maxlength="2">
+                <div class="form-error">This field is required</div>
+              </div><!-- /form-line -->
+
+              <div class="form-line">
+                <label class="form-label" for="inputYear">Year</label>
+                <input type="number" id="inputYear" class="form-control" placeholder="YYYY">
+                <div class="form-error">This field is required</div>
+              </div><!-- /form-line -->
+            </div><!-- /form-group -->
+          </div><!-- /form-top -->
+
+          <button type="submit" class="btn" id="formBtn"></button>
+        </div><!-- /form -->
+
+
+      </form>
+
+      <div class="result_information">
+        <div class="result_information-item">
+          <span class="result_information-years">--</span> years
+        </div>
+        <div class="result_information-item">
+          <span class="result_information-months">--</span> months
+        </div>
+        <div class="result_information-item">
+          <span class="result_information-days">--</span> days
+        </div>
+      </div><!-- /result_information -->
+
+    </div><!-- /app -->
+
+  </main><!-- /main -->
+    
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/K-ost" target="_blank">K-ost</a>.
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
