@@ -152,13 +152,17 @@ function resultFunction(days) {
 function animateNumbers(result, node) {
   let duration = Math.floor(1000 / result)
   let start = 0
-  const animate = setInterval(() => {
-    start += 1
-    node.textContent = start
-    if (start >= result) {
-      clearInterval(animate)
-    }
-  }, duration)
+  if (document.documentElement.clientWidth > 700) {
+    const animate = setInterval(() => {
+      start += 1
+      node.textContent = start
+      if (start >= result) {
+        clearInterval(animate)
+      }
+    }, duration)
+  } else {
+    node.textContent = result
+  }
 }
 
 
