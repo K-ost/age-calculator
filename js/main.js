@@ -49,6 +49,26 @@ inputYear.addEventListener('input', e => {
 })
 
 
+
+// Animate
+function animateNumbers(result, node) {
+  if (document.documentElement.clientWidth > 700) {
+    let duration = Math.floor(1000 / result)
+    let start = 0
+    const animate = setInterval(() => {
+      start += 1
+      node.textContent = start
+      if (start >= result) {
+        clearInterval(animate)
+      }
+    }, duration)
+  } else {
+    node.textContent = Math.ceil(result)
+  }
+}
+
+
+
 // Submit event
 formAge.addEventListener('submit', e => {
   e.preventDefault()
@@ -148,20 +168,6 @@ function resultFunction(days) {
     daysRest = restDays - (months * averageDaysMonth)
   }
   return { daysRest, months, years }
-}
-
-
-// Animate
-function animateNumbers(result, node) {
-  let duration = Math.floor(1000 / result)
-  let start = 0
-  const animate = setInterval(() => {
-    start += 1
-    node.textContent = start
-    if (start >= result) {
-      clearInterval(animate)
-    }
-  }, duration)
 }
 
 
