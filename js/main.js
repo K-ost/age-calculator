@@ -52,19 +52,15 @@ inputYear.addEventListener('input', e => {
 
 // Animate
 function animateNumbers(result, node) {
-  if (document.documentElement.clientWidth > 700) {
-    let duration = Math.floor(1000 / result)
-    let start = 0
-    const animate = setInterval(() => {
-      start += 1
-      node.textContent = start
-      if (start >= result) {
-        clearInterval(animate)
-      }
-    }, duration)
-  } else {
-    node.textContent = Math.ceil(result)
-  }
+  let duration = Math.floor(1000 / result)
+  let start = 0
+  const animate = setInterval(() => {
+    start += 1
+    node.textContent = start
+    if (start >= result) {
+      clearInterval(animate)
+    }
+  }, duration)
 }
 
 
@@ -127,27 +123,23 @@ formAge.addEventListener('submit', e => {
 
   
   // Show results
-  // if (resultInDays <= 365) {
-  //   nodeYears.textContent = 0
-  //  } else {
-  //   animateNumbers(resultYears, nodeYears)
-  // }
+  if (resultInDays <= 365) {
+    nodeYears.textContent = 0
+   } else {
+    animateNumbers(resultYears, nodeYears)
+  }
 
-  // if (resultInDays <= 30 || typedMonth === currentMonth) {
-  //   nodeMonths.textContent = 0
-  // } else {
-  //   animateNumbers(resultMonths, nodeMonths)
-  // }
+  if (resultInDays <= 30 || typedMonth === currentMonth) {
+    nodeMonths.textContent = 0
+  } else {
+    animateNumbers(resultMonths, nodeMonths)
+  }
 
-  // if (resultInDays <= 1 || typedDay === currentDay) {
-  //   nodeDays.textContent = 0
-  // } else {
-  //   animateNumbers(resultDays - 1, nodeDays)
-  // }
-
-  nodeYears.textContent = valueYear
-  nodeMonths.textContent = valueMonth
-  nodeDays.textContent = valueDay
+  if (resultInDays <= 1 || typedDay === currentDay) {
+    nodeDays.textContent = 0
+  } else {
+    animateNumbers(resultDays - 1, nodeDays)
+  }
 
 })
 
