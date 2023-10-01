@@ -1,7 +1,6 @@
 
 // Nodes
 const formAge = document.querySelector('#formAge')
-const formBtn = document.querySelector('#formBtn')
 const inputDay = document.querySelector('#inputDay')
 const inputMonth = document.querySelector('#inputMonth')
 const inputYear = document.querySelector('#inputYear')

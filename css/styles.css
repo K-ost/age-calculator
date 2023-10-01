@@ -54,6 +54,7 @@ body {
   cursor: pointer;
   height: var(--btn);
   padding: 0;
+  text-indent: -9999px;
   transition: all 200ms ease-in-out;
   width: var(--btn);
 }
