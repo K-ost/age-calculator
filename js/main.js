@@ -123,8 +123,6 @@ formAge.addEventListener('submit', e => {
   const typedDate = new Date(`${valueYear}-${valueMonth}-${valueDay}`)
   const currentDate = new Date(`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`)
 
-  console.log(currentDate)
-
   // Future date
   if (typedDate > currentDate) {
     inputDay.closest('.form-line').classList.add('error')
@@ -135,7 +133,7 @@ formAge.addEventListener('submit', e => {
   }
 
   // Calculate dates
-  const resultInDays = Math.ceil(Math.abs(currentDate.getTime() - typedDate.getTime()) / (1000 * 3600 * 24))
+  const resultInDays = Math.ceil((currentDate - typedDate) / (1000 * 3600 * 24))
   const typedDay = Number(inputDay.value)
   const currentDay = currentDate.getDate()
   const typedMonth = Number(inputMonth.value)
