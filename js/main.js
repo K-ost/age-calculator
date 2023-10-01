@@ -165,6 +165,3 @@ formAge.addEventListener('submit', e => {
 
 })
 
-
-
-
