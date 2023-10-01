@@ -120,8 +120,10 @@ formAge.addEventListener('submit', e => {
   }
 
   // Get dates
-  const typedDate = new Date(`${valueMonth}-${valueDay}-${valueYear}`)
-  const currentDate = new Date(Date.now())
+  const typedDate = new Date(`${valueYear}-${valueMonth}-${valueDay}`)
+  const currentDate = new Date(`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`)
+
+  console.log(currentDate)
 
   // Future date
   if (typedDate > currentDate) {
