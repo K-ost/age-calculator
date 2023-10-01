@@ -38,13 +38,13 @@ function changeFunction(el, value, num, string) {
 }
 
 // Change events
-inputDay.addEventListener('input', e => {
+inputDay.addEventListener('change', e => {
   valueDay = changeFunction(inputDay, e.target.value, 31, 'a valid day')
 })
-inputMonth.addEventListener('input', e => {
+inputMonth.addEventListener('change', e => {
   valueMonth = changeFunction(inputMonth, e.target.value, 12, 'a valid month')
 })
-inputYear.addEventListener('input', e => {
+inputYear.addEventListener('change', e => {
   valueYear = changeFunction(inputYear, e.target.value, currentYear, 'in the past')
 })
 
