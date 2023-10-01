@@ -56,7 +56,7 @@ function animateNumbers(result, node) {
   let start = 0
   const animate = setInterval(() => {
     start += 1
-    node.textContent = start
+    node.innerHTML = start
     if (start >= result) {
       clearInterval(animate)
     }
@@ -124,19 +124,19 @@ formAge.addEventListener('submit', e => {
   
   // Show results
   if (resultInDays <= 365) {
-    nodeYears.textContent = 0
+    nodeYears.innerHTML = 0
    } else {
     animateNumbers(resultYears, nodeYears)
   }
 
   if (resultInDays <= 30 || typedMonth === currentMonth) {
-    nodeMonths.textContent = 0
+    nodeMonths.innerHTML = 0
   } else {
     animateNumbers(resultMonths, nodeMonths)
   }
 
   if (resultInDays <= 1 || typedDay === currentDay) {
-    nodeDays.textContent = 0
+    nodeDays.innerHTML = 0
   } else {
     animateNumbers(resultDays - 1, nodeDays)
   }
