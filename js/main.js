@@ -38,16 +38,39 @@ function changeFunction(el, value, num, string) {
 }
 
 // Change events
-inputDay.addEventListener('change', e => {
+inputDay.addEventListener('input', e => {
   valueDay = changeFunction(inputDay, e.target.value, 31, 'a valid day')
 })
-inputMonth.addEventListener('change', e => {
+inputMonth.addEventListener('input', e => {
   valueMonth = changeFunction(inputMonth, e.target.value, 12, 'a valid month')
 })
-inputYear.addEventListener('change', e => {
+inputYear.addEventListener('input', e => {
   valueYear = changeFunction(inputYear, e.target.value, currentYear, 'in the past')
 })
 
+
+
+// resultFunction
+function resultFunction(days) {
+  let daysRest = 0
+  let months = 0
+  let years = 0
+
+  if (days <= 30) {
+    daysRest = days
+  }
+  if (days > 30 && days <= averageDaysYear) {
+    months = Math.floor(days / averageDaysMonth)
+    daysRest = days - (months * averageDaysMonth)
+  }
+  if (days > 365) {
+    years = Math.floor(days / averageDaysYear)
+    restDays = days - years * averageDaysYear
+    months = Math.floor(restDays / averageDaysMonth)
+    daysRest = restDays - (months * averageDaysMonth)
+  }
+  return { daysRest, months, years }
+}
 
 
 // Animate
@@ -62,7 +85,6 @@ function animateNumbers(result, node) {
     }
   }, duration)
 }
-
 
 
 // Submit event
@@ -143,28 +165,6 @@ formAge.addEventListener('submit', e => {
 
 })
 
-
-// resultFunction
-function resultFunction(days) {
-  let daysRest = 0
-  let months = 0
-  let years = 0
-
-  if (days <= 30) {
-    daysRest = days
-  }
-  if (days > 30 && days <= averageDaysYear) {
-    months = Math.floor(days / averageDaysMonth)
-    daysRest = days - (months * averageDaysMonth)
-  }
-  if (days > 365) {
-    years = Math.floor(days / averageDaysYear)
-    restDays = days - years * averageDaysYear
-    months = Math.floor(restDays / averageDaysMonth)
-    daysRest = restDays - (months * averageDaysMonth)
-  }
-  return { daysRest, months, years }
-}
 
 
 
